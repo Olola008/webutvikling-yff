@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Budsjettkalkulator</title>
+  </head>
+  <body>
+    <header>
+      <h1>Mitt budsjett</h1>
+      <p>Oversikt over pengene dine hver måned</p>
+    </header>
+
+    <main>
+      <div class="budsjett">
+        <h2>Inntekter</h2>
+        <label for="inntekt">Beløp</label>
+        <input id="inntekt" type="number" min="0" />
+        <button id="inntektKnapp">Legg til</button>
+      </div>
+
+      <div class="budsjett">
+        <h2>Utgifter</h2>
+        <label for="utgift">Beløp</label>
+        <input id="utgift" type="number" min="0" />
+        <button id="utgiftKnapp">Legg til</button>
+      </div>
+
+      <div class="resultat">
+        <h2>Resultat</h2>
+        <div>
+          <span>Inntekter:</span>
+          <strong id="inntektSum">0 kr</strong>
+        </div>
+
+        <div>
+          <span>Utgifter:</span>
+          <strong id="utgiftSum">0 kr</strong>
+        </div>
+
+        <div>
+          <span>Saldo</span>
+          <strong id="saldo">0 kr</strong>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
