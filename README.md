@@ -33,3 +33,15 @@
 # - Laget strukturen i HTML
 
 # - Laget felt for inntekter og utgifter.
+
+# - Laget JavaScript for å legge til inntekter.
+
+# - Laget JavaScript for å legge til utgifter.
+
+# - Gjort det mulig å legge til flere inntekter og utgifter.
+
+# - Laget beregning av saldo.
+
+# - Lagt til rød farge hvis saldoen er negativ.
+
+# - Testet funksjonene med console.log.

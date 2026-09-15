@@ -8,6 +8,8 @@ const utgiftInput = document.getElementById("utgift");
 const utgiftKnapp = document.getElementById("utgiftKnapp");
 const utgiftSum = document.getElementById("utgiftSum");
 
+const saldo = document.getElementById("saldo");
+
 console.log(inntektInput);
 console.log(inntektKnapp);
 
@@ -17,9 +19,23 @@ let totalUtgift = 0;
 inntektKnapp.addEventListener("click", function () {
   const beløp = Number(inntektInput.value);
 
+  if (inntektInput.value === "") {
+    alert("Feltet er tomt");
+  }
+
   totalInntekt += beløp;
 
   inntektSum.textContent = totalInntekt + " kr";
+
+  const resultat = totalInntekt - totalUtgift;
+
+  saldo.textContent = resultat + "kr";
+
+  if (resultat < 0) {
+    saldo.style.color = "green";
+  } else {
+    saldo.style.color = "";
+  }
 
   inntektInput.value = "";
 
@@ -32,6 +48,15 @@ utgiftKnapp.addEventListener("click", function () {
   totalUtgift += beløp;
 
   utgiftSum.textContent = totalUtgift + " kr";
+
+  const resultat = totalInntekt - totalUtgift;
+
+  saldo.textContent = resultat + "kr";
+  if (resultat < 0) {
+    saldo.style.color = "red";
+  } else {
+    saldo.style.color = "";
+  }
 
   utgiftInput.value = "";
 
