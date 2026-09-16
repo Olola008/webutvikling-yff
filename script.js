@@ -32,7 +32,7 @@ inntektKnapp.addEventListener("click", function () {
   saldo.textContent = resultat + "kr";
 
   if (resultat < 0) {
-    saldo.style.color = "green";
+    saldo.style.color = "red";
   } else {
     saldo.style.color = "";
   }
