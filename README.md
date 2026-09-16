@@ -45,3 +45,7 @@
 # - Lagt til rød farge hvis saldoen er negativ.
 
 # - Testet funksjonene med console.log.
+
+# - Lagt til kategorier for inntekter og utgifter.
+
+# - Testet at negativ saldo fortsatt blir rød.
