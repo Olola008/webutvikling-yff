@@ -17,6 +17,14 @@
         <h2>Inntekter</h2>
         <label for="inntekt">Beløp</label>
         <input id="inntekt" type="number" min="0" />
+
+        <label for="inntektType">Type</label>
+        <select id="inntektType">
+          <option value="Lønn">Lønn</option>
+          <option value="Støtte">Støtte</option>
+          <option value="Annet">Annet</option>
+        </select>
+
         <button id="inntektKnapp">Legg til</button>
       </div>
 
@@ -24,6 +32,14 @@
         <h2>Utgifter</h2>
         <label for="utgift">Beløp</label>
         <input id="utgift" type="number" min="0" />
+
+        <label for="utgiftType">Type</label>
+        <select id="utgiftType">
+          <option value="Mat">Mat</option>
+          <option value="Husleie">Husleie</option>
+          <option value="Transport">Transport</option>
+        </select>
+
         <button id="utgiftKnapp">Legg til</button>
       </div>
 
@@ -43,6 +59,7 @@
           <span>Saldo</span>
           <strong id="saldo">0 kr</strong>
         </div>
+        <ul id="postListe"></ul>
       </div>
     </main>
     <script src="script.js"></script>
