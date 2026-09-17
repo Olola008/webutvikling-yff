@@ -20,8 +20,8 @@ header {
 
 input,
 select {
-  padding: 5px;
-  margin-bottom: 5px;
+  padding: 3px;
+  margin-bottom: 1px;
 }
 
 button {
@@ -30,4 +30,13 @@ button {
   color: white;
   border: none;
   border-radius: 8px;
+}
+
+input:focus,
+select:focus {
+  background-color: rgb(197, 180, 160);
+}
+
+button:hover {
+  background-color: rgb(98, 53, 11);
 }
