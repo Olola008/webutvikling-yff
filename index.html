@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +15,7 @@
     <main>
       <div class="budsjett">
         <h2>Inntekter</h2>
-        <label for="inntekt">Beløp</label>
+        <label for="inntekt">Beløp i kroner</label>
         <input id="inntekt" type="number" min="0" />
 
         <label for="inntektType">Type</label>
@@ -25,12 +25,12 @@
           <option value="Annet">Annet</option>
         </select>
 
-        <button id="inntektKnapp">Legg til</button>
+        <button id="inntektKnapp">Legg til inntekt</button>
       </div>
 
       <div class="budsjett">
         <h2>Utgifter</h2>
-        <label for="utgift">Beløp</label>
+        <label for="utgift">Beløp i kroner</label>
         <input id="utgift" type="number" min="0" />
 
         <label for="utgiftType">Type</label>
@@ -40,7 +40,7 @@
           <option value="Transport">Transport</option>
         </select>
 
-        <button id="utgiftKnapp">Legg til</button>
+        <button id="utgiftKnapp">Legg til utgift</button>
       </div>
 
       <div class="resultat">
@@ -56,10 +56,12 @@
         </div>
 
         <div>
-          <span>Saldo</span>
+          <span>Saldo:</span>
           <strong id="saldo">0 kr</strong>
         </div>
         <ul id="postListe"></ul>
+
+        <button id="skrivUt">Skriv ut budsjett</button>
       </div>
     </main>
     <script src="script.js"></script>
