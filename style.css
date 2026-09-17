@@ -17,3 +17,17 @@ header {
   margin-bottom: 20px;
   border-radius: 16px;
 }
+
+input,
+select {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+button {
+  padding: 7px 10px;
+  background-color: rgba(60, 28, 7, 0.701);
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
