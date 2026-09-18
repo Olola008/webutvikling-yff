@@ -12,6 +12,7 @@ const utgiftType = document.getElementById("utgiftType");
 
 const saldo = document.getElementById("saldo");
 const skrivUt = document.getElementById("skrivUt");
+const tømBudsjett = document.getElementById("tømBudsjett");
 
 console.log(inntektInput);
 console.log(inntektKnapp);
@@ -80,7 +81,7 @@ inntektKnapp.addEventListener("click", function () {
 
   const resultat = totalInntekt - totalUtgift;
 
-  saldo.textContent = resultat + "kr";
+  saldo.textContent = resultat + " kr";
 
   if (resultat < 0) {
     saldo.style.color = "red";
@@ -118,7 +119,7 @@ utgiftKnapp.addEventListener("click", function () {
     alert("Feltet er tomt");
   }
 
-  saldo.textContent = resultat + "kr";
+  saldo.textContent = resultat + " kr";
   if (resultat < 0) {
     saldo.style.color = "red";
   } else {
@@ -129,6 +130,21 @@ utgiftKnapp.addEventListener("click", function () {
 
   console.log(beløp);
 });
+
 skrivUt.addEventListener("click", function () {
   window.print();
+});
+
+tømBudsjett.addEventListener("click", function () {
+  localStorage.removeItem("inntekter");
+  localStorage.removeItem("utgifter");
+
+  totalInntekt = 0;
+  totalUtgift = 0;
+
+  inntektSum.textContent = "0 kr";
+  utgiftSum.textContent = "0 kr";
+  saldo.textContent = "0 kr";
+
+  alert("Budsjettet skal tømmes");
 });

@@ -1,8 +1,8 @@
-# Budjsettkalkultor
+# Budsjettkalkultor
 
 # Info om prosjektet
 
-# Dette er en nettside som skal hjelpe oss mwed å få oversikt over månedlige inntekter og utgifter.
+# Dette er en nettside som skal hjelpe oss med å få oversikt over månedlige inntekter og utgifter.
 
 # Målet er at brukeren skal kunne legge inn inntekter og utgifter og få beregnet hvor mye penger som er igjen på slutten av måneden.
 
@@ -49,3 +49,7 @@
 # - Lagt til kategorier for inntekter og utgifter.
 
 # - Testet at negativ saldo fortsatt blir rød.
+
+# - Lag til localStorage slik at alt blir lagret etter at man refresher.
+
+# - Lagt til muligheten til å skrive ut budsjettet.
