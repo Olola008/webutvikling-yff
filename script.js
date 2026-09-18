@@ -1,5 +1,5 @@
 console.log("javascript herrrr");
-
+//Henter HTML elementene vi trenger
 const inntektInput = document.getElementById("inntekt");
 const inntektKnapp = document.getElementById("inntektKnapp");
 const inntektSum = document.getElementById("inntektSum");
@@ -16,44 +16,45 @@ const tømBudsjett = document.getElementById("tømBudsjett");
 
 console.log(inntektInput);
 console.log(inntektKnapp);
-
+//Lager variabler for total inntekt og total utgift
 let totalInntekt = 0;
 let totalUtgift = 0;
-
+//Liste som lagrer alle inntekter og utgifter
 let inntekter = [];
 let utgifter = [];
-
+//Henter tidligere lagrede inntekter og utgifter fra localstorage
 const lagredeInntekter = localStorage.getItem("inntekter");
 const lagredeUtgifter = localStorage.getItem("utgifter");
-
+//Hvis det finnes lagrede inntekter, hentes de inn igjen
 if (lagredeInntekter) {
   inntekter = JSON.parse(lagredeInntekter);
 }
+//Hvis det finnes lagrede utgifter, hentes de inn igjen
 if (lagredeUtgifter) {
   utgifter = JSON.parse(lagredeUtgifter);
 }
-
+//Regner sammen alle lagrede inntekter
 for (let inntekt of inntekter) {
   totalInntekt += inntekt.beløp;
 }
-
+//Regner sammen alle lagrede utgifter
 for (let utgift of utgifter) {
   totalUtgift += utgift.beløp;
 }
 
 inntektSum.textContent = totalInntekt + " kr";
 utgiftSum.textContent = totalUtgift + " kr";
-
+//Regner ut saldo ved å trekke utgifter fra inntekter
 const resultat = totalInntekt - totalUtgift;
 
 saldo.textContent = resultat + " kr";
-
+//Gjør saldoen rød hvis den er negativ
 if (resultat < 0) {
   saldo.style.color = "red";
 } else {
   saldo.style.color = "";
 }
-
+//Kjører når brukeren trykker "Legg til inntekt"
 inntektKnapp.addEventListener("click", function () {
   const beløp = Number(inntektInput.value);
   const type = inntektType.value;
@@ -74,7 +75,7 @@ inntektKnapp.addEventListener("click", function () {
     type: type,
     beløp: beløp,
   });
-
+  //Lagrer inntektene slik at de beholdes etter refresh
   localStorage.setItem("inntekter", JSON.stringify(inntekter));
 
   inntektSum.textContent = totalInntekt + " kr";
@@ -93,7 +94,7 @@ inntektKnapp.addEventListener("click", function () {
 
   console.log(beløp);
 });
-
+//Kjører når brukeren trykker "Legg til utgift"
 utgiftKnapp.addEventListener("click", function () {
   const beløp = Number(utgiftInput.value);
   const type = utgiftType.value;
@@ -130,11 +131,11 @@ utgiftKnapp.addEventListener("click", function () {
 
   console.log(beløp);
 });
-
+//Åpner utskfriftfunksjon
 skrivUt.addEventListener("click", function () {
   window.print();
 });
-
+//Tømmer lagrede data og setter alle summer tilbake til 0
 tømBudsjett.addEventListener("click", function () {
   localStorage.removeItem("inntekter");
   localStorage.removeItem("utgifter");
